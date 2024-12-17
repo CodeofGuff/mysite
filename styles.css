@@ -139,12 +139,11 @@ body::after {
     font-size: 0.9rem;
     letter-spacing: 0.3px;
     margin-top: auto;
-    padding: calc(var(--space) * 2) var(--space);
+    padding: calc(var(--space));
     position: relative;
     text-align: center;
     text-shadow: var(--text-shadow);
     z-index: 2;
-    margin-left: 300px;
 }
 
 
@@ -580,10 +579,6 @@ body::after {
     
     .container {
         padding: calc(var(--space) * 2);
-    }
-
-    .footer {
-        margin-left: 0;
     }
 }
 
