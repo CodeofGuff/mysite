@@ -77,6 +77,7 @@ body::after {
     inset: 0;
     position: fixed;
     z-index: -1;
+    display: none;
 }
 
 .content-wrapper {
@@ -154,6 +155,15 @@ body::after {
     left: calc(var(--space) * 2);
     margin: 0;
     z-index: 10;
+}
+
+.circular-image {
+    animation: smoothPulseGlow 4s ease-in-out infinite;
+    border-radius: 50%;
+    height: 150px;
+    width: 150px;
+    margin: calc(var(--space)) 0;
+    object-fit: cover;
 }
 
 
@@ -248,13 +258,14 @@ body::after {
     width: 100%;
     padding: calc(var(--space));
     z-index: 100;
+    background: none;
 }
 
 .work-section .links-grid {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
-    gap: calc(var(--space));
+    gap: calc(var(--space) * 0.75);
     width: 100%;
     max-width: 1200px;
     margin: 0;
@@ -267,6 +278,7 @@ body::after {
     max-width: 300px;
     margin: 0;
     background: var(--glass-bg);
+    backdrop-filter: blur(5px);
 }
 
 /* Video Container */
@@ -309,16 +321,17 @@ body::after {
 /* Welcome Section */
 .welcome-card {
     animation: breatheGlow 5s ease-in-out infinite;
-    backdrop-filter: blur(5px);
-    background: var(--glass-bg);
+    backdrop-filter: none;
+    background: none;
     border-radius: var(--radius);
-    box-shadow: 0 0 50px rgba(164, 160, 185, 0.2);
+    box-shadow: none;
     max-width: 800px;
-    padding: calc(var(--space) * 2);
+    padding: 0;
     position: relative;
     transition: var(--transition);
     width: 100%;
     z-index: 1;
+    text-align: center;
 }
 
 .welcome-section {
@@ -736,6 +749,121 @@ body::after {
 
 .footer a:hover {
     color: var(--primary-glow);
+}
+
+/* Sidebar Left */
+.side-bar-left {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 300px;
+    padding: calc(var(--space));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: calc(var(--space) * 0.5);
+    z-index: 10;
+}
+
+/* Adjust container margin to account for sidebar */
+.container {
+    margin-left: 300px;
+    padding: calc(var(--space) * 4);
+    padding-left: calc(var(--space) * 4);
+}
+
+/* Add media query adjustments */
+@media (max-width: 768px) {
+    .side-bar-left {
+        position: relative;
+        width: 100%;
+        height: auto;
+        padding: calc(var(--space));
+    }
+
+    .container {
+        margin-left: 0;
+        padding: calc(var(--space) * 2);
+    }
+}
+
+/* Adjust scrollbar for sidebar */
+.side-bar-left::-webkit-scrollbar {
+    display: none;
+}
+
+.side-bar-left::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.side-bar-left::-webkit-scrollbar-thumb {
+    background: var(--primary);
+    border-radius: var(--radius);
+}
+
+/* Update Sidebar Left styles */
+.side-bar-left {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 300px;
+    padding: calc(var(--space));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: calc(var(--space) * 0.5);
+    z-index: 10;
+}
+
+/* Adjust welcome card for more compact layout */
+.welcome-card {
+    padding: 0;
+}
+
+.welcome-card h1 {
+    font-size: 1.75rem;
+    margin-bottom: calc(var(--space) * 0.5);
+}
+
+.welcome-text {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    margin-bottom: calc(var(--space) * 0.5);
+}
+
+/* Adjust work section for more compact layout */
+.work-section {
+    padding: 0;
+}
+
+.work-section .section-label {
+    font-size: 1rem;
+    margin-bottom: calc(var(--space) * 0.5);
+}
+
+.work-section .links-grid {
+    gap: calc(var(--space) * 0.75);
+}
+
+.social-item {
+    padding: calc(var(--space) * 0.5);
+}
+
+.social-item h3 {
+    font-size: 1rem;
+    margin-bottom: calc(var(--space) * 0.25);
+}
+
+.social-item p {
+    font-size: 0.8rem;
+    margin: 0;
+}
+
+/* Remove scrollbar styles since we don't need them anymore */
+.side-bar-left::-webkit-scrollbar {
+    display: none;
 }
 
 
