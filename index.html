@@ -1,4 +1,4 @@
-≈<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -6,11 +6,19 @@
     <title>David Guffre</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://embed.twitch.tv/embed/v1.js"></script>
 </head>
 <body>
     <aside class="side-bar-left">
+        <div class="socials-links-grid">
+            <a href="https://x.com/iamguff" target="_blank" rel="noopener noreferrer" data-tooltip="Follow me on X"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="https://bsky.app/profile/iamguff.bsky.social" target="_blank" rel="noopener noreferrer" data-tooltip="Follow me on Bluesky"><i class="fas fa-cloud"></i></a>
+            <a href="https://www.linkedin.com/in/davidguffre/" target="_blank" rel="noopener noreferrer" data-tooltip="Connect on LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="https://www.twitch.tv/guffre" target="_blank" rel="noopener noreferrer" data-tooltip="Watch on Twitch"><i class="fab fa-twitch"></i></a>
+            <a href="https://github.com/CodeofGuff" target="_blank" rel="noopener noreferrer" data-tooltip="Follow me on GitHub"><i class="fab fa-github"></i></a>
+        </div>
         <img src="assets/img/profile.jpeg" alt="Profile Image" class="circular-image">
-        <div class="welcome-card">
+        <div class="welcome-card dev-bio">
             <h1>Hello and Welcome!</h1>
             <p class="welcome-text"><strong>Who am I?</strong></p>
             <p class="welcome-text">My name is David Guffre and am a self-taught software developer currently living in the <strong>Bay Area, CA.</strong></p><br>
@@ -19,39 +27,89 @@
             <p class="welcome-text">My preferred framework is React Native, however I like to be proficient in all things programming.</p><br>
             <p class="welcome-text">Currently I am looking for my first job in the tech industry!</p>
         </div>
-        <div class="sidebar-end"></div>
-
+        <div class="welcome-card vo-bio">
+            <h2>Voice Acting Journey</h2>
+            <p class="welcome-text">
+                The immersion a great voice actor provides to a project is my drive to perform.
+            </p>    
+            <p class="welcome-text">
+                With over 8 years of experience in the industry, I've had the opportunity to work with a variety of clients and voice many characters. From warm and friendly to bold and dramatic, I have the versatility and range to capture the essence you are looking for.
+            </p>
+            <p class="welcome-text">
+                Thank you for visiting and I look forward to the opportunity to work with you on your next project!
+            </p>
+        </div>
     </aside>
 
     <main class="container">
-        <div class="work-section">
-            <h3 class="section-label">My Work</h3>
-            <div class="links-grid">
-                <a href="html/vo.html" class="work-link">
-                    <h3>Voice Acting</h3>
-                    <p>My professional voice portfolio</p>
-                </a>
-                <a href="https://squadplanner.io/" class="work-link" target="_blank">
-                    <h3>Squad Planner</h3>
-                    <p>Strategy mapping tool for Squad players</p>
-                </a>
-                <a href="https://rltw.net" class="work-link" target="_blank">
-                    <h3>Recon's Website</h3>
-                    <p>Website for a gaming community</p>
-                </a>
+        <!-- Dev Section -->
+        <section id="dev-section">
+            <div class="work-section">
+                <h3 class="section-label">My Work</h3>
+                <div class="links-grid">
+                    <a href="#vo-section" class="work-link">
+                        <h3>Voice Acting</h3>
+                        <p>My professional voice portfolio</p>
+                    </a>
+                    <a href="https://squadplanner.io/" class="work-link" target="_blank">
+                        <h3>Squad Planner</h3>
+                        <p>Strategy mapping tool for Squad players</p>
+                    </a>
+                    <a href="https://rltw.net" class="work-link" target="_blank">
+                        <h3>Recon's Website</h3>
+                        <p>Website for a gaming community</p>
+                    </a>
+                </div>
             </div>
-        </div>
+            
+            <section class="stream-section">
+                <div class="twitch-embed">
+                    <div id="twitch-embed"></div>
+                </div>
+            </section>
+        </section>
+
+        <!-- Voice Acting Section -->
+        <section id="vo-section">
+            <div class="demo-reel">
+                <h2>Voice Demos</h2>
+                <div class="voice-demos">
+                    <div class="demo-item">
+                        <h3>Character Demo Main</h3>
+                        <audio controls class="audio-player" preload="metadata">
+                            <source src="assets/audio/DavidGuffre_CharacterDemo2020.mp3" type="audio/mpeg">
+                        </audio>
+                    </div>
+                    <div class="demo-item">
+                        <h3>Character Demo</h3>
+                        <audio controls class="audio-player" preload="metadata">
+                            <source src="assets/audio/DavidGuffre_2019CharDemos_v2_o.mp3" type="audio/mpeg">
+                        </audio>
+                    </div>
+                    <div class="demo-item">
+                        <h3>Commercial Demo</h3>
+                        <audio controls class="audio-player" preload="metadata">
+                            <source src="assets/audio/DavidGuffre_CommercialDemo2020.mp3" type="audio/mpeg">
+                        </audio>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-samples">
+                <h2>Featured Work</h2>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/Wgu0kXS3WT8" title="Window Man"></iframe>
+                    <iframe src="https://www.youtube.com/embed/3TEX7Xptgxc" title="Boiling Steel"></iframe>
+                    <iframe src="https://www.youtube.com/embed/alIgd3bvIQ4" title="The Last Epoch"></iframe>
+                </div>
+            </div>
+        </section>
     </main>
+
     <footer class="footer">
-        <div class="socials-links-grid">
-            <a href="https://x.com/iamguff" target="_blank" rel="noopener noreferrer" aria-label="Follow me on X" data-tooltip="Follow me on X"><i class="fa-brands fa-x-twitter"></i></a>
-            <a href="https://bsky.app/profile/iamguff.bsky.social" target="_blank" rel="noopener noreferrer" aria-label="Join our Bluesky" data-tooltip="Follow me on Bluesky"><i class="fas fa-cloud"></i></a>
-            <a href="https://www.linkedin.com/in/davidguffre/" target="_blank" rel="noopener noreferrer" aria-label="Follow me on Linkedin" data-tooltip="Connect on LinkedIn"><i class="fab fa-linkedin"></i></a>
-            <a href="https://www.twitch.tv/guffre" target="_blank" rel="noopener noreferrer" aria-label="Follow me on Twitch" data-tooltip="Watch on Twitch"><i class="fab fa-twitch"></i></a>
-            <a href="https://github.com/CodeofGuff" target="_blank" rel="noopener noreferrer" aria-label="Follow me on GitHub" data-tooltip="Follow me on GitHub"><i class="fab fa-github"></i></a>
-        </div>
         <p>© All rights reserved. Created by David Guffre</p>
-        <p>Recon website built with <a href="https://github.com/Puvified" target="_blank" id="footer-link">Puvify</a></p>
     </footer>
+    <script src="js/twitch.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>
