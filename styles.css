@@ -1,7 +1,7 @@
 /* ==========================================================================
    1. CSS Variables
    ========================================================================== */
-   :root {
+:root {
     /* Colors */
     --bg: #1b1f23;
     --bg-dark: #141719;
@@ -22,7 +22,7 @@
 }
 
 /* ==========================================================================
-   2. Reset & Base
+   2. Base & Reset
    ========================================================================== */
 * {
     box-sizing: border-box;
@@ -31,7 +31,7 @@
 }
 
 body {
-    background: var(--bg) url('https://i.imgur.com/E8vitJa.jpg') center/cover no-repeat fixed;
+    background: var(--bg) url('assets/img/background.jpg') center/cover no-repeat fixed;
     color: var(--text);
     display: flex;
     flex-direction: column;
@@ -61,8 +61,9 @@ body::after {
 }
 
 /* ==========================================================================
-   3. Layout
+   3. Layout Components
    ========================================================================== */
+/* Container */
 .container {
     align-items: center;
     display: flex;
@@ -91,48 +92,29 @@ body::after {
     padding-top: calc(var(--space) * 2);
 }
 
-/* ==========================================================================
-   4. Components (Alphabetically)
-   ========================================================================== */
-/* About Section */
-.about-section {
-    animation: breatheGlow 5s ease-in-out infinite;
-    backdrop-filter: blur(5px);
-    background: var(--glass-bg);
-    border-radius: var(--radius);
-    box-shadow: 0 0 50px rgba(164, 160, 185, 0.2);
-    flex: 1;
-    max-width: 600px;
-    padding: calc(var(--space) * 2);
-}
-
-
-/* Demo Reel */
-.demo-reel {
-    animation: breatheGlow 5s ease-in-out infinite;
-    backdrop-filter: blur(5px);
-    background: var(--glass-bg);
-    border-radius: var(--radius);
-    box-shadow: 0 0 50px rgba(164, 160, 185, 0.2);
-    flex: 0 0 300px;
-    padding: calc(var(--space) * 0.75);
-}
-
-/* Flex Container */
-.flex-container {
-    align-items: flex-start;
+/* Sidebar */
+.side-bar-left {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 325px;
+    padding: calc(var(--space));
     display: flex;
-    gap: calc(var(--space) * 2);
-    justify-content: center;
-    margin: 0 auto;
-    max-width: 1000px;
-    padding: var(--space);
+    flex-direction: column;
+    align-items: center;
+    gap: calc(var(--space) * 0.5);
+    z-index: 10;
+    background: rgba(27, 31, 35, 0.4);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    height: fit-content;
+    min-height: calc(150px + var(--space) + 3rem + 5 * 1.4rem);
+    border-radius: 12px;
 }
 
 /* Footer */
 .footer {
     backdrop-filter: blur(5px);
-    background: rgba(27, 31, 35, 0.4);
     color: var(--text);
     font-size: 0.9rem;
     letter-spacing: 0.3px;
@@ -144,9 +126,200 @@ body::after {
     z-index: 2;
 }
 
+.footer a {
+    color: var(--primary);
+    text-decoration: none;
+    transition: var(--transition);
+}
 
+.footer a:hover {
+    color: var(--primary-glow);
+}
 
-/* Profile Image */
+/* ==========================================================================
+   4. Welcome Section
+   ========================================================================== */
+.welcome-card {
+    animation: breatheGlow 5s ease-in-out infinite;
+    backdrop-filter: none;
+    background: none;
+    border-radius: var(--radius);
+    box-shadow: none;
+    max-width: 800px;
+    padding: 0;
+    position: relative;
+    transition: var(--transition);
+    width: 100%;
+    z-index: 1;
+    text-align: center;
+    margin-bottom: calc(var(--space));
+}
+
+.welcome-section {
+    margin: 0 auto;
+    max-width: 800px;
+    padding: calc(var(--space)) 0;
+    text-align: center;
+}
+
+.welcome-text {
+    color: var(--text);
+    font-size: 1.1rem;
+    letter-spacing: 0.3px;
+    line-height: 1.6;
+    margin: 0 auto;
+    max-width: 600px;
+    text-shadow: var(--text-shadow);
+}
+
+/* ==========================================================================
+   5. Work Section
+   ========================================================================== */
+.work-section {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: calc(var(--space));
+    backdrop-filter: blur(5px);
+    border-radius: var(--radius);
+    box-shadow: 0 0 50px rgba(164, 160, 185, 0.2);
+    z-index: 100;
+}
+
+.section-label {
+    color: var(--primary);
+    font-size: 1.5rem;
+    margin-bottom: calc(var(--space));
+    text-shadow: 0 0 25px var(--primary-glow);
+    text-align: center;
+    width: 100%;
+    padding: calc(var(--space) * 0.5);
+    position: relative;
+    z-index: 101;
+}
+
+.work-link {
+    color: var(--primary);
+    text-decoration: none;
+    padding: calc(var(--space) * 0.75);
+    border-radius: var(--radius);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+                background-color 0.3s ease,
+                box-shadow 0.3s ease;
+    text-align: center;
+    min-width: 200px;
+    max-width: 300px;
+    position: relative;
+    z-index: 1;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    box-shadow: 0 0 50px rgba(164, 160, 185, 0.2);
+    display: block;
+    width: 100%;
+    will-change: transform, background, box-shadow;
+    transform: translateZ(0);
+    -webkit-font-smoothing: antialiased;
+    background: var(--glass-bg);
+}
+
+.work-link h3 {
+    font-size: 1.1rem;
+    margin-bottom: calc(var(--space) * 0.25);
+}
+
+.work-link p {
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.work-link:hover {
+    background: var(--primary);
+    color: var(--bg-dark);
+    box-shadow: 0 0 50px rgba(164, 160, 185, 0.4);
+    transform: translateY(-5px);
+    z-index: 1001;
+}
+
+.work-section .links-grid {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: calc(var(--space) * 0.75);
+    width: 100%;
+    max-width: 300px;
+    margin: 0;
+    padding: 0;
+}
+
+/* ==========================================================================
+   6. Social Links
+   ========================================================================== */
+.socials-links-grid {
+    display: flex;
+    flex-direction: row;
+    gap: calc(var(--space) * 1.5);
+    align-items: center;
+    justify-content: center;
+    max-width: 600px;
+    margin: calc(var(--space)) auto 0;
+    padding: calc(var(--space));
+    width: 100%;
+    order: 3;
+}
+
+.socials-links-grid a {
+    color: var(--primary);
+    font-size: 2rem;
+    text-decoration: none;
+    transition: var(--transition);
+    text-shadow: 0 0 10px var(--primary-glow);
+    position: relative;
+    z-index: 12;
+}
+
+.socials-links-grid a::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--glass-bg);
+    color: var(--text);
+    padding: 4px 8px;
+    border-radius: var(--radius);
+    font-size: 0.875rem;
+    white-space: nowrap;
+    backdrop-filter: blur(5px);
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transition);
+}
+
+.socials-links-grid a:hover::after {
+    opacity: 1;
+    visibility: visible;
+}
+
+.socials-links-grid a i {
+    filter: drop-shadow(0 0 8px rgba(146, 62, 191, 0.4));
+    transition: var(--transition);
+}
+
+.socials-links-grid a:hover i {
+    filter: drop-shadow(0 0 12px rgba(146, 62, 191, 0.6))
+           drop-shadow(0 0 4px rgba(146, 62, 191, 0.4));
+    transform: scale(1.2);
+}
+
+/* ==========================================================================
+   7. Media Components
+   ========================================================================== */
+/* Profile Images */
 .profile-image {
     animation: smoothPulseGlow 7s ease-in-out infinite;
     border-radius: var(--radius);
@@ -168,121 +341,6 @@ body::after {
     width: 150px;
     margin: calc(var(--space)) 0;
     object-fit: cover;
-}
-
-
-/* Social Items */
-.social-item {
-    color: var(--primary);
-    text-decoration: none;
-    padding: calc(var(--space) * 0.75);
-    border-radius: var(--radius);
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    text-align: center;
-    min-width: 200px;
-    max-width: 300px;
-    position: relative;
-    z-index: 1;
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-    box-shadow: 0 0 50px rgba(164, 160, 185, 0.2);
-    display: block;
-    width: 100%;
-    will-change: transform, background, box-shadow;
-    transform: translateZ(0);
-    -webkit-font-smoothing: antialiased;
-}
-
-.social-item h3 {
-    font-size: 1.1rem;
-    margin-bottom: calc(var(--space) * 0.25);
-}
-
-.social-item p {
-    font-size: 0.9rem;
-    margin: 0;
-}
-
-.social-item:hover,
-.work-section .social-item:hover,
-.bottom-section .social-item:hover {
-    background: var(--text);
-    color: var(--bg-dark);
-    box-shadow: 0 0 50px rgba(164, 160, 185, 0.4);
-    transform: scale(1.1) translateZ(0);
-    z-index: 1001;
-}
-
-/* Add styles to handle nested links in social items */
-.social-item p a{
-    color: inherit;
-    text-decoration: underline;
-    pointer-events: none; /* Prevents the nested link from capturing clicks */
-}
-
-.social-item:hover p a {
-    color: var(--bg-dark);
-}
-
-.social-item-vo {
-    backdrop-filter: blur(5px);
-    background: var(--glass-bg);
-    border-radius: var(--radius);
-    box-shadow: 0 0 50px rgba(164, 160, 185, 0.2);
-    color: var(--primary);
-    display: block;
-    margin: calc(var(--space) * 2) auto;
-    max-width: 300px;
-    padding: calc(var(--space) * 0.5) calc(var(--space) * 0.75);
-    position: relative;
-    text-align: center;
-    text-decoration: none;
-    transition: var(--transition);
-    width: 100%;
-    z-index: 1;
-}
-
-.social-item-vo:hover {
-    background: var(--text);
-    box-shadow: 0 0 50px rgba(164, 160, 185, 0.4);
-    color: var(--bg-dark);
-    transform: scale(1.05);
-    z-index: 1001;
-}
-
-/* Top Section */
-.work-section {
-    position: relative;
-    top: 0;
-    left: 0;
-    right: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    padding: calc(var(--space));
-    z-index: 100;
-    background: none;
-}
-
-.work-section .links-grid {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: calc(var(--space) * 0.75);
-    width: 100%;
-    max-width: 1200px;
-    margin: 0;
-    padding: 0;
-}
-
-.work-section .social-item {
-    flex: 0 1 auto;
-    min-width: 200px;
-    max-width: 300px;
-    margin: 0;
-    background: var(--glass-bg);
-    backdrop-filter: blur(5px);
 }
 
 /* Video Container */
@@ -322,94 +380,9 @@ body::after {
     scroll-snap-align: start;
 }
 
-/* Welcome Section */
-.welcome-card {
-    animation: breatheGlow 5s ease-in-out infinite;
-    backdrop-filter: none;
-    background: none;
-    border-radius: var(--radius);
-    box-shadow: none;
-    max-width: 800px;
-    padding: 0;
-    position: relative;
-    transition: var(--transition);
-    width: 100%;
-    z-index: 1;
-    text-align: center;
-}
-
-.welcome-section {
-    margin: 0 auto;
-    max-width: 800px;
-    padding: calc(var(--space)) 0;
-    text-align: center;
-}
-
-.welcome-section h1 {
-    color: var(--primary);
-    font-size: 3rem;
-    letter-spacing: 2px;
-    margin-bottom: calc(var(--space));
-    text-shadow: 0 0 25px var(--primary-glow);
-    position: relative;
-}
-
-.welcome-text {
-    color: var(--text);
-    font-size: 1.1rem;
-    letter-spacing: 0.3px;
-    line-height: 1.6;
-    margin: 0 auto;
-    max-width: 600px;
-    text-shadow: var(--text-shadow);
-}
-
-/* Update menu styles */
-.menu {
-    position: relative;
-    z-index: 10;
-    width: 100%;
-    padding: var(--space);
-}
-
-.menu-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: center;
-    padding: 0 var(--space);
-}
-
-.menu-item {
-    background: var(--glass-bg);
-    color: var(--primary);
-    text-decoration: none;
-    padding: calc(var(--space) * 0.75);
-    border-radius: var(--radius);
-    transition: var(--transition);
-    text-align: center;
-    min-width: 100px;
-    position: relative;
-    z-index: 1;
-    backdrop-filter: blur(5px);
-    box-shadow: 0 0 50px rgba(164, 160, 185, 0.2);
-}
-
-.menu-item:hover {
-    background: var(--text);
-    color: var(--bg-dark);
-    box-shadow: 0 0 50px rgba(164, 160, 185, 0.4);
-    transform: scale(1.1);
-    z-index: 1001;
-}
-
 /* ==========================================================================
-   5. Animations
+   8. Animations
    ========================================================================== */
-@keyframes breatheGlow {
-    /* Remove entire block */
-}
-
 @keyframes smoothPulseGlow {
     0% { box-shadow: 0 0 30px rgba(146, 62, 191, 0.2); }
     50% { box-shadow: 0 0 100px rgba(146, 62, 191, 0.6); }
@@ -417,30 +390,45 @@ body::after {
 }
 
 /* ==========================================================================
-   6. Media Queries
+   9. Media Queries
    ========================================================================== */
+/* Large Screens */
 @media (max-width: 1200px) {
     .profile-image {
         width: min(85vw, 600px);
     }
-    
 }
 
-/* Media query for tablet and smaller screens
-   Adjusts layout and sizing for better mobile viewing */
+/* Tablet & Medium Screens */
 @media (max-width: 768px) {
     body.voice-acting {
         background-size: auto 100vh;
+        background: var(--bg) url('../assets/img/background.jpg') center/120% no-repeat fixed;
     }
+
+    .container {
+        width: 100%;
+        margin-left: 0;
+        padding: calc(var(--space));
+        column-count: 2;
+    }
+
     .content-wrapper {
-        display: flex;
-        flex-direction: column;
         width: 100%;
     }
 
-    
+    .side-bar-left {
+        position: relative;
+        width: 100%;
+        height: auto;
+        min-height: auto;
+    }
 
-    /* Layout */
+    .section-label {
+        font-size: 1.75rem;
+        padding: calc(var(--space) * 0.75);
+    }
+
     .work-section {
         position: relative;
         flex-direction: column;
@@ -449,123 +437,14 @@ body::after {
         width: 100%;
         order: 1;
         margin: calc(var(--space) * 0.5) 0;
+        padding: calc(var(--space));
     }
 
-    .bottom-section .links-section {
-        max-width: 600px;
-        width: 100%;
-    }
-
-    .profile-container {
-        width: 100%;
-        order: 1;
-    }
-
-    .welcome-section {
-        order: 2;
-        width: 100%;
-        margin: calc(var(--space)) 0;
-    }
-
-    .links-section {
-        position: relative;
-        width: 100%;
-        max-width: none;
-        padding: 0 calc(var(--space) * 0.5);
-        order: 3;
-    }
-
-    /* Links Grid */
-    .links-grid {
-        grid-template-columns: 1fr;
-        gap: calc(var(--space));
-        max-width: 600px;
-        margin: 0 auto calc(var(--space) * 2);
-    }
-
-    /* Social item mobile styling
-       Makes items full width and adjusts text size */
-    .social-item {
+    .work-link {
         min-width: unset;
         width: 100%;
         margin: 0;
         font-size: 0.9rem;
-    }
-    .social-item-vo {
-        max-width: 600px;
-        font-size: 0.9rem;
-    }
-
-    /* Voice acting page background adjustment for mobile */
-    body.voice-acting {
-        background: var(--bg) url('https://www.spotlight.com/wp-content/uploads/2023/10/jonathan-velasquez-160775-scaled.jpg') center/120% no-repeat fixed;
-    }
-
-    /* Flex container mobile layout
-       Switches to vertical stacking */
-    .flex-container {
-        flex-direction: column;
-        gap: calc(var(--space));
-        padding: 0;
-    }
-
-    /* Demo reel and about section mobile width adjustments */
-    .demo-reel,
-    .about-section {
-        width: 100%;
-        max-width: 600px;
-        margin: 0 auto;
-    }
-
-    /* Video samples container mobile adjustments */
-    .video-samples {
-        width: 100%;
-        padding: calc(var(--space) * 0.5);
-    }
-
-    /* Video container padding adjustment for mobile */
-    .video-container {
-        padding: calc(var(--space));
-    }
-
-    /* Video iframe size adjustments for mobile viewing */
-    .video-container iframe {
-        flex: 0 0 300px;
-        height: 169px;
-    }
-
-    /* Demo item spacing and margins for mobile */
-    .demo-item {
-        margin-bottom: calc(var(--space));
-    }
-
-    .demo-item:last-child {
-        margin-bottom: 0;
-    }
-
-    .demo-item h3 {
-        font-size: 1rem;
-        margin-bottom: calc(var(--space) * 0.5);
-    }
-
-    .work-section .links-grid {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: calc(var(--space));
-        width: 100%;
-        max-width: 600px;
-        margin: 0 auto;
-    }
-
-    .work-section .social-item {
-        width: 100%;
-        min-width: unset;
-       margin: 0;
-    }
-
-    .socials-links-grid {
-        margin-top: calc(var(--space) * 0.5);
     }
 
     .profile-image {
@@ -574,77 +453,54 @@ body::after {
         height: auto;
         margin: 0 auto calc(var(--space) * 2);
     }
-    
-    .container {
-        padding: calc(var(--space) * 2);
+
+    .video-container {
+        padding: calc(var(--space));
+    }
+
+    .video-container iframe {
+        flex: 0 0 300px;
+        height: 169px;
     }
 }
 
-/* Small mobile device adjustments
-   Further refinements for very small screens */
+/* Mobile Screens */
 @media (max-width: 480px) {
     body.voice-acting {
-        background-size: auto 100vh;
+        background: var(--bg) url('../assets/img/background.jpg') center/150% no-repeat fixed;
     }
 
     .container {
         padding: calc(var(--space) * 0.5);
     }
 
-    .profile-image {
-        width: 75vw;
-    }
-
-    /* Text size adjustments for better readability on small screens */
-    .welcome-text,
-    .social-item p {
-        font-size: 0.95rem;
-        line-height: 1.4;
-    }
-
-    /* Icon container adjustments for small screens */
-    .icon-container {
-        gap: calc(var(--space) * 0.15);
-        max-width: 180px;
-    }
-    
-    /* Tech icon size adjustments */
-    .tech-icon {
-        width: 35px;
-        height: 35px;
-    }
-
-    /* Layout spacing adjustments for small screens */
-    .links-grid {
-        gap: calc(var(--space) * 0.25);
-
+    .section-label {
+        font-size: 1.5rem;
+        padding: calc(var(--space) * 0.5);
     }
 
     .work-section {
         gap: calc(var(--space) * 0.5);
+        padding: calc(var(--space) * 0.5);
     }
 
-    /* Social item adjustments for small screens */
-    .social-item {
+    .work-link {
         padding: calc(var(--space) * 0.4);
     }
 
-    .social-item h3 {
+    .work-link h3 {
         font-size: 0.85rem;
         margin-bottom: 2px;
     }
 
-    .social-item p {
+    .work-link p {
         font-size: 0.75rem;
-        margin: 0;
     }
 
-    /* Voice acting page background adjustment for small screens */
-    body.voice-acting {
-        background: var(--bg) url('https://www.spotlight.com/wp-content/uploads/2023/10/jonathan-velasquez-160775-scaled.jpg') center/150% no-repeat fixed;
+    .profile-image {
+        width: 75vw;
     }
 
-    /* Video container adjustments for small screens */
     .video-container {
         padding: calc(var(--space) * 0.5);
     }
@@ -653,224 +509,6 @@ body::after {
         flex: 0 0 250px;
         height: 141px;
     }
-
-    /* Demo reel and about section padding for small screens */
-    .demo-reel,
-    .about-section {
-        padding: calc(var(--space));
-    }
-
-    /* Demo item adjustments for small screens */
-    .demo-item {
-        margin-bottom: calc(var(--space) * 0.75);
-    }
-
-    .demo-item h3 {
-        font-size: 0.9rem;
-    }
-
-    .social-item-vo {
-        padding: calc(var(--space) * 0.4);
-    }
-
-    .social-item-vo h3 {
-        font-size: 0.85rem;
-        margin-bottom: 2px;
-    }
-
-    .social-item-vo p {
-        font-size: 0.75rem;
-        margin: 0;
-    }
-}
-
-/* Navigation specific styles */
-
-
-.socials-links-grid {
-    display: flex;
-    flex-direction: row;
-    gap: calc(var(--space) * 1.5);
-    align-items: center;
-    justify-content: center;
-    max-width: 600px;
-    margin: calc(var(--space)) auto 0;
-    padding: calc(var(--space));
-    width: 100%;
-    order: 3;
-}
-
-.socials-links-grid a {
-    color: var(--primary);
-    font-size: 2rem;
-    text-decoration: none;
-    transition: var(--transition);
-    text-shadow: 0 0 10px var(--primary-glow);
-    position: relative;
-    z-index: 12;
-}
-
-/* Add tooltip styles */
-.socials-links-grid a::after {
-    content: attr(data-tooltip);
-    position: absolute;
-    bottom: -30px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: var(--glass-bg);
-    color: var(--text);
-    padding: 4px 8px;
-    border-radius: var(--radius);
-    font-size: 0.875rem;
-    white-space: nowrap;
-    backdrop-filter: blur(5px);
-    opacity: 0;
-    visibility: hidden;
-    transition: var(--transition);
-}
-
-.socials-links-grid a:hover::after {
-    opacity: 1;
-    visibility: visible;
-}
-
-.socials-links-grid a i {
-    filter: drop-shadow(0 0 8px rgba(146, 62, 191, 0.4));
-    transition: var(--transition);
-}
-
-.socials-links-grid a:hover i {
-    filter: drop-shadow(0 0 12px rgba(146, 62, 191, 0.6))
-           drop-shadow(0 0 4px rgba(146, 62, 191, 0.4));
-    transform: scale(1.2);
-}
-
-.footer a {
-    color: var(--primary);
-    text-decoration: none;
-    transition: var(--transition);
-}
-
-.footer a:hover {
-    color: var(--primary-glow);
-}
-
-/* Sidebar Left */
-.side-bar-left {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    width: 300px;
-    padding: calc(var(--space));
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: calc(var(--space) * 0.5);
-    z-index: 10;
-    background: rgba(27, 31, 35, 0.4);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-}
-
-/* Adjust container margin to account for sidebar */
-.container {
-    margin-left: 300px;
-    padding: calc(var(--space) * 4);
-    padding-left: calc(var(--space) * 4);
-}
-
-/* Add media query adjustments */
-@media (max-width: 768px) {
-    .side-bar-left {
-        position: relative;
-        width: 100%;
-        height: auto;
-        padding: calc(var(--space));
-    }
-
-    .container {
-        margin-left: 0;
-        padding: calc(var(--space) * 2);
-    }
-}
-
-/* Adjust scrollbar for sidebar */
-.side-bar-left::-webkit-scrollbar {
-    display: none;
-}
-
-.side-bar-left::-webkit-scrollbar-track {
-    background: transparent;
-}
-
-.side-bar-left::-webkit-scrollbar-thumb {
-    background: var(--primary);
-    border-radius: var(--radius);
-}
-
-/* Update Sidebar Left styles */
-.side-bar-left {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    width: 300px;
-    padding: calc(var(--space));
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: calc(var(--space) * 0.5);
-    z-index: 10;
-}
-
-/* Adjust welcome card for more compact layout */
-.welcome-card {
-    padding: 0;
-}
-
-.welcome-card h1 {
-    font-size: 1.75rem;
-    margin-bottom: calc(var(--space) * 0.5);
-}
-
-.welcome-text {
-    font-size: 0.9rem;
-    line-height: 1.4;
-    margin-bottom: calc(var(--space) * 0.5);
-}
-
-/* Adjust work section for more compact layout */
-.work-section {
-    padding: 0;
-}
-
-.work-section .section-label {
-    font-size: 1rem;
-    margin-bottom: calc(var(--space) * 0.5);
-}
-
-.work-section .links-grid {
-    gap: calc(var(--space) * 0.75);
-}
-
-.social-item {
-    padding: calc(var(--space) * 0.5);
-}
-
-.social-item h3 {
-    font-size: 1rem;
-    margin-bottom: calc(var(--space) * 0.25);
-}
-
-.social-item p {
-    font-size: 0.8rem;
-    margin: 0;
-}
-
-/* Remove scrollbar styles since we don't need them anymore */
-.side-bar-left::-webkit-scrollbar {
-    display: none;
 }
 
 
