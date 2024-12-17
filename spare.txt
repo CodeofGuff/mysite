@@ -1,0 +1,24 @@
+        <div class="content-wrapper">
+            <div class="profile-container">
+                <img src="https://i.imgur.com/JjyoU1y.jpg" alt="Profile Image" class="circular-image">
+                <div class="icon-container">
+                    <div class="tech-icon-wrapper" title="HTML">
+                        <img src="https://i.imgur.com/JxGwRkx.png" alt="HTML" class="tech-icon">
+                    </div>
+                    <div class="tech-icon-wrapper" title="CSS">
+                        <img src="https://i.imgur.com/q4FiSDN.png" alt="CSS" class="tech-icon">
+                    </div>
+                    <div class="tech-icon-wrapper" title="JS/TypeScript">
+                        <img src="https://i.imgur.com/7ZGaXPe.png" alt="JS/TypeScript" class="tech-icon">
+                    </div>
+                    <div class="tech-icon-wrapper" title="React/React Native">
+                        <img src="https://i.imgur.com/0NfQONa.png" alt="React/React Native" class="tech-icon">
+                    </div>
+                    <div class="tech-icon-wrapper" title="Python">
+                        <img src="https://i.imgur.com/KXBos4L.png" alt="Python" class="tech-icon">
+                    </div>
+                    <div class="tech-icon-wrapper" title="Swift/SwiftUI">
+                        <img src="https://i.imgur.com/Fp7xY8e.png" alt="Swift/SwiftUI" class="tech-icon">
+                    </div>
+                </div>
+            </div>
