@@ -67,14 +67,12 @@ body::after {
     align-items: center;
     display: flex;
     flex-direction: column;
-    margin: 0 auto;
+    margin-left: 300px;
     max-width: 1200px;
     padding: calc(var(--space) * 4);
     position: relative;
-    width: 100%;
+    width: calc(100% - 300px);
     z-index: 2;
-    padding-left: calc(200px + var(--space) * 4);
-    margin-left: 300px;
 }
 
 .container::before {
