@@ -6,6 +6,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const voSection = document.querySelector('#vo-section');
     
     // Initially hide VO bio and show dev bio
+    voBio.style.position = 'absolute';
+    voBio.style.top = devBio.offsetTop + 'px';
     voBio.classList.remove('visible');
     devBio.classList.add('visible');
     
@@ -14,17 +16,12 @@ document.addEventListener('DOMContentLoaded', function() {
         const voSectionTop = voSection.offsetTop;
         const scrollPosition = window.scrollY;
         
-        if (scrollPosition >= voSectionTop - 300) {
+        if (scrollPosition >= voSectionTop - 200) {
             devBio.classList.remove('visible');
             voBio.classList.add('visible');
         } else {
             devBio.classList.add('visible');
             voBio.classList.remove('visible');
         }
-    });
-
-    // Handle profile image click
-    profileImage.addEventListener('click', function() {
-        sideBar.classList.toggle('visible');
     });
 });
