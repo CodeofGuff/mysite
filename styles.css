@@ -156,10 +156,10 @@ body::after {
 /* Profile Image */
 .circular-image {
     animation: smoothPulseGlow 4s ease-in-out infinite;
-    border-radius: 50%;
-    height: 175px;
-    width: 175px;
-    margin: calc(var(--space)) 0;
+    border-radius: 25%;
+    height: 200px;
+    width: 80%;
+    margin: 0;
     object-fit: cover;
     cursor: pointer;
     transition: transform 0.3s ease;
@@ -174,11 +174,12 @@ body::after {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    gap: calc(var(--space) * 1.5);
+    gap: calc(var(--space) * 1);
     align-items: center;
     width: 100%;
     padding: calc(var(--space));
     margin-bottom: 0;
+    margin-top: 0;
 }
 
 .socials-links-grid a {
@@ -276,7 +277,7 @@ body::after {
     backdrop-filter: none;
     box-shadow: none;
     margin: 0;
-    padding: calc(var(--space));
+    padding: 0;
     transition: opacity 0.5s ease,
                 transform 0.5s ease,
                 visibility 0.5s ease;
