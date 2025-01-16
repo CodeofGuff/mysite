@@ -119,21 +119,6 @@ body::after {
            drop-shadow(0 0 4px rgba(146, 62, 191, 0.4));
 }
 
-.tech-icon-wrapper:hover::after {
-    content: attr(title);
-    position: absolute;
-    bottom: -25px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: var(--glass-bg);
-    color: var(--text);
-    padding: 4px 8px;
-    border-radius: var(--radius);
-    font-size: 0.75rem;
-    white-space: nowrap;
-    backdrop-filter: blur(5px);
-    z-index: 1000;
-}
 
 /* Sidebar */
 .side-bar-left {
