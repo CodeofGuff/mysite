@@ -11,6 +11,19 @@
 <body>
     <aside class="side-bar-left">
 
+       
+        
+        <img src="assets/img/profile.jpeg" alt="Profile Image" class="circular-image">
+        <div class="welcome-card dev-bio">
+            <h1>Hello and Welcome!</h1>
+            <p class="welcome-text"><strong>Who am I?</strong></p>
+            <p class="welcome-text">My name is David Guffre and am a self-taught software developer currently living in the <strong>Bay Area, CA.</strong></p>
+            <p class="welcome-text">I'm an introvert with a lithium social battery thanks to being a Bartender of many years.</p>
+            <p class="welcome-text">I have a natural curiousity and always looking for <strong>what I don't know.</strong></p>
+            <p class="welcome-text">My preferred web-dev framework is <strong>React / React Native</strong>, however I like to be proficient in all things software development.</p>
+            <p class="welcome-text"><strong>Fun Fact:</strong> I'm currently looking for my first job in the tech industry!</p>
+
+        </div>
         <div class="tech-icon-container">
             <div class="tech-icon-wrapper" title="HTML">
                 <img src="assets/img/html.png" alt="HTML" class="tech-icon">
@@ -37,18 +50,6 @@
                 <img src="assets/img/swift.png" alt="Swift/SwiftUI" class="tech-icon">
             </div> 
         </div>
-        
-        <img src="assets/img/profile.jpeg" alt="Profile Image" class="circular-image">
-        <div class="welcome-card dev-bio">
-            <h1>Hello and Welcome!</h1>
-            <p class="welcome-text"><strong>Who am I?</strong></p>
-            <p class="welcome-text">My name is David Guffre and am a self-taught software developer currently living in the <strong>Bay Area, CA.</strong></p>
-            <p class="welcome-text">I'm an introvert with a lithium social battery thanks to being a Bartender of many years.</p>
-            <p class="welcome-text">I have a natural curiousity and always looking for <strong>what I don't know.</strong></p>
-            <p class="welcome-text">My preferred web-dev framework is <strong>React / React Native</strong>, however I like to be proficient in all things software development.</p>
-            <p class="welcome-text"><strong>Fun Fact:</strong> I'm currently looking for my first job in the tech industry!</p>
-
-        </div>
         <div class="welcome-card vo-bio">
             <h1>Voice Acting Journey</h1>
             <p class="welcome-text">The <strong>immersion</strong> a great voice actor provides to a project is my drive to perform.</p>    
@@ -69,7 +70,7 @@
 
     <main class="container">
         <!-- Dev Section -->
-        <section id="dev-section">
+        <section id="dev-section" class="section-container">
             <div class="work-section">
                 <h3 class="section-label">My Work</h3>
                 <div class="links-grid">
@@ -85,18 +86,34 @@
                         <h3>Recon's Website</h3>
                         <p>Website for a gaming community</p>
                     </a>
+                    <a href="https://gufftarot.netlify.app" class="work-link" target="_blank">
+                        <h3>Tarot App</h3>
+                        <p>Single card Tarot reader, for daily fortunes</p>
+                    </a>
                 </div>
             </div>
             
-            <section class="stream-section">
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- Stream Section -->
+        <section class="section-container">
+            <div class="stream-section">
                 <div class="twitch-embed">
                     <div id="twitch-embed"></div>
                 </div>
-            </section>
+                <h2>Stream Info</h2>
+                <p>I have been an avid gamer for many years and love sharing my expirences online with a small community.</p>
+
+                
+            </div>
         </section>
 
+        <div class="section-divider"></div>
+
         <!-- Voice Acting Section -->
-        <section id="vo-section">
+        <section id="vo-section" class="section-container">
             <div class="demo-reel">
                 <h2>Voice Demos</h2>
                 <div class="voice-demos">
